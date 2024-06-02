@@ -182,9 +182,9 @@ Complete the exercise in the space below:
 function basicCalculator(i, j, operation) {
     if (operation === "add") {
         return (i+j);
-    } else if (k === "subtract"){
+    } else if (operation === "subtract"){
         return (i-j);
-    } else if (k === "multiply"){
+    } else if (operation === "multiply"){
         return (i*j);
     } else {
         return (i/j)
