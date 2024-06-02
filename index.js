@@ -18,7 +18,7 @@ const maxOfTwoNumbers = (x, y) => {
   
   console.log('Exercise 1 Result:', maxOfTwoNumbers(3, 9));
 
-  /*
+/*
 Exercise 2: isAdult()
 
 Write a function named isAdult. It should take an age (number) 
@@ -53,7 +53,7 @@ Complete the exercise in the space below:
 */
 
 function isCharAVowel(letter) {
-    if (letter == 'a' && 'e' && 'i' && 'o' && 'u') {
+    if (letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u') {
         return true;
     } else {
         return false;
@@ -74,8 +74,8 @@ should return 'johnsmith@example.com'.
 Complete the exercise in the space below:
 */
 
-function generateEmail(x, y) {
-    return (x + '@' + y)
+function generateEmail(username, domain) {
+    return `${username}@${domain}`
 }
 
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
@@ -94,7 +94,7 @@ Complete the exercise in the space below:
 
 
 function greetUser(name, time) {
-    return ("Good " + time +", " + name + "!")
+    return `Good ${time}, ${name}!`
 }
 console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
 
@@ -133,8 +133,8 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 
-function calculateTip(d, e) {
-  return (d + e * .15)
+function calculateTip(amount, tip) {
+  return (amount * (tip/100))
 }
 
 console.log('Exercise 7 Result:', calculateTip(50, 20));
@@ -153,11 +153,11 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 Complete the exercise in the space below:
 */
 
-function convertTemperature(g, h) {
-    if (h === "C") {
-        return ((g * 9/5) + 32 + " F")
+function convertTemperature(temp, scale) {
+    if (scale === "C") {
+        return `${(temp * 9/5) + 32} F`
     } else {
-        return ((g * 5/9) - 32 + " C")
+        return `${(temp * 5/9) - 32} C`
     } 
 }
 
@@ -179,13 +179,13 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 Complete the exercise in the space below:
 */
 
-function basicCalculator(i, j, k) {
-    if (k === "add") {
-        return (i + j);
+function basicCalculator(i, j, operation) {
+    if (operation === "add") {
+        return (i+j);
     } else if (k === "subtract"){
-        return (i - j);
+        return (i-j);
     } else if (k === "multiply"){
-        return (i * j);
+        return (i*j);
     } else {
         return (i/j)
     }
@@ -208,15 +208,15 @@ Example: calculateGrade(100) should return A.
 Complete the exercise in the space below:
 */
 
-function calculateGrade(l){
-    if (l >= 90){
+function calculateGrade(grade){
+    if (grade >= 90){
         return ("A");
-    } else if (l >= 80){
-        return ("b");
-    } else if (l >= 70){
-        return ("c");
-    } else if (l >= 60){
-        return ("d");
+    } else if (grade >= 80){
+        return ("B");
+    } else if (grade >= 70){
+        return ("C");
+    } else if (grade >= 60){
+        return ("D");
     }else {
          return ("F")
         }
@@ -240,8 +240,8 @@ Example: createUsername('Samantha', 'Green') should return 'SamGre12'.
 Complete the exercise in the space below:
 */
 
-function createUsername(m, n){
-    return m.slice(0,3) + n.slice(0,3) + (m.length + n.length)
+function createUsername(firstName, lastName){
+    return `${firstName.slice(0,3)}${lastName.slice(0,3)}${(firstName.length + lastName.length)}`
 }
 
 console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
